@@ -150,7 +150,7 @@ POI.prototype.getInfoBox = function(){
   content+='<div class="tab-pane active container" id="basic" style="margin:0px;width:400px">';
 
   //name
-  content+='<h4><a href=\'http://osm24.eu/index.php?id='+this.element.id+'#!18/'+this.element.lat+'/'+this.element.lon+'/\'>' +((this.element.tags.hasOwnProperty("name")) ? this.element.tags["name"]:"----")+'</a><div id="plusone-div" data-size="small" data-href=\'http://osm24.eu/index.php?id='+this.element.id+'#!18/'+this.element.lat+'/'+this.element.lon+'/\'></div></h4>';
+  content+='<h4><a href=\'http://osm24.eu/index.php?id='+this.element.id+'#!18/'+this.element.lat+'/'+this.element.lon+'/\'>' +(this.getName()?this.getName():"---")+'</a><div id="plusone-div" data-size="small" data-href=\'http://osm24.eu/index.php?id='+this.element.id+'#!18/'+this.element.lat+'/'+this.element.lon+'/\'></div></h4>';
   //addr
   content+='<small>'+((this.element.tags.hasOwnProperty("addr:city")) ? this.element.tags["addr:city"]+', ' : "")+((this.element.tags.hasOwnProperty("addr:street")) ? this.element.tags["addr:street"]+', ' : "")+((this.element.tags.hasOwnProperty("addr:housenumber")) ? this.element.tags["addr:housenumber"]+', ' : "")+'</small>';
 
