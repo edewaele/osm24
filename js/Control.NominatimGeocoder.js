@@ -2,7 +2,7 @@ L.Control.NominatimGeocoder = L.Control.extend({
 	options: {
 		collapsed: true,
 		position: 'topright',
-		text: 'Locate',
+		text: lang_locate,
 		callback: function (results) {
 			// Check if no results are returned
 			if (results.length >= 1) {
