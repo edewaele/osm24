@@ -152,8 +152,10 @@ POI.prototype.getInfoBox = function(){
   //name
   content+='<h4><a href=\'http://osm24.eu/index.php?id='+this.element.id+'#!18/'+this.element.lat+'/'+this.element.lon+'/\'>' +(this.getName()?this.getName():"---")+'</a> <div id="plusone-div" data-size="small" data-href=\'http://osm24.eu/index.php?id='+this.element.id+'#!18/'+this.element.lat+'/'+this.element.lon+'/\'></div></h4>';
   //addr
-  content+='<small>'+((this.element.tags.hasOwnProperty("addr:city")) ? this.element.tags["addr:city"]+', ' : "")+((this.element.tags.hasOwnProperty("addr:street")) ? this.element.tags["addr:street"]+', ' : "")+((this.element.tags.hasOwnProperty("addr:housenumber")) ? this.element.tags["addr:housenumber"]+', ' : "")+'</small>';
-
+  if(this.element.tags.hasOwnProperty("addr:housenumber") && this.element.tags.hasOwnProperty("addr:street"))
+	  content+='<small>'+((this.element.tags.hasOwnProperty("addr:city")) ? this.element.tags["addr:city"]+', ' : "")+this.element.tags["addr:street"]+', ' +this.element.tags["addr:housenumber"]+'</small>';
+  else
+	  content+='<div id="'+this.element.type+this.element.id+'">'+lang_loading+'</div>';
   //net
   content+='<div>';
   content += this.__genItems({tag:['contact:email','email'],icon:'glyphicon glyphicon-envelope',href:'mailto:'});
@@ -283,4 +285,47 @@ POI.prototype.updateShadow = function (now){
 	if(this.shadow==old)
 		return false;
 	return true;
+};
+
+/*
+	Determine the address of a POI, if it is unknown
+*/
+POI.prototype.fetchAddress = function(){
+	var typeTable = {"node":"N","way":"W","relation":"R"};
+	var addressDiv = this.element.type+this.element.id;
+	// if the address has not been determined yet
+	if($("#"+addressDiv).html() == lang_loading)
+	{
+		var requestData;
+		if(this.element.tags.hasOwnProperty("addr:housenumber"))
+		{
+			if(this.element.type)
+				requestData = {osm_type:typeTable[this.element.type],osm_id:this.element.id};
+			else
+				// way objects have no key type, no idea why
+				requestData = {osm_type:this.element.id[0].toUpperCase(),osm_id:this.element.id.substr(1)};
+		}
+		else
+			requestData = {lon:this.element.lon,lat:this.element.lat};
+		
+		$.ajax({
+			url: 'nominatim_reverse_proxy.php',
+			dataType: "json",
+			data: requestData,
+			number : this.element.tags["addr:housenumber"],
+			addressDiv : addressDiv,
+			success: function(nominatim){
+				var wayName = nominatim.address.road;
+				if(!wayName)wayName = nominatim.address.pedestrian;
+				if(!wayName)wayName = nominatim.address.footway;
+				var cityName = nominatim.address.city;
+				if(!cityName)cityName = nominatim.address.town;
+				if(!cityName)cityName = nominatim.address.village;
+				var displayedAddress = cityName?cityName:"";
+				displayedAddress += (wayName?", "+wayName:"");
+				displayedAddress += (this.number?", "+this.number:"");
+				$("#"+this.addressDiv).html('<small>'+displayedAddress+'</small>');
+			}
+		});
+	}
 };

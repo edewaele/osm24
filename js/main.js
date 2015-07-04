@@ -476,10 +476,12 @@ var zoomControl = L.control.zoom({
   map.on('locationerror', onLocationError);
 
   map.on('moveend', nominatimQuery);
-  map.on('popupopen', function() {
+  map.on('popupopen', function(e) {
     var href=$("#plusone-div").data("href");
     var size=$("#plusone-div").data("size");
-    gapi.plusone.render("plusone-div",{'size':size,'href':href});
+    //gapi.plusone.render("plusone-div",{'size':size,'href':href});
+	// we make sure that a proper address is displayed
+	e.popup._source.el.fetchAddress();
   });
   n=true;
   var href=$("#main-plus").data("href");
