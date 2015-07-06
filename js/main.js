@@ -26,13 +26,6 @@ function addElement(e){
                  });
 
               showMessage(name,popup.outerHTML,0);
-              DISQUS.reset({
-                 reload: true,
-                 config: function () {  
-                    this.page.identifier = e.id+"";  
-                    this.page.url = VAL[1];
-                 }
-              });
     },marker);
 
 
@@ -46,13 +39,6 @@ function addElement(e){
                  'page': VAL[1],
                  'title': 'Popup'
                  });
-              DISQUS.reset({
-                 reload: true,
-                 config: function () {  
-                    this.page.identifier = e.id+"";  
-                    this.page.url = VAL[1];
-                 }
-              });
            },marker);
   }
   return marker;
@@ -160,16 +146,6 @@ Object.size = function(obj) {
 var map;
 var location_marker;
 var location_circle;
-
-    var disqus_shortname = 'gdzieblee'; 
-
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
 
 function onLocationFound(e) {
   if(locate==3){map.stopLocate();return;}
@@ -479,14 +455,12 @@ var zoomControl = L.control.zoom({
   map.on('popupopen', function(e) {
     var href=$("#plusone-div").data("href");
     var size=$("#plusone-div").data("size");
-    //gapi.plusone.render("plusone-div",{'size':size,'href':href});
 	// we make sure that a proper address is displayed
 	e.popup._source.el.fetchAddress();
   });
   n=true;
   var href=$("#main-plus").data("href");
   var size=$("#main-plus").data("size");
-  gapi.plusone.render("main-plus",{'size':size,'href':href});
 
   if(typeof get_locate != 'undefined')
     map.locate({setView:true,maxZoom: 16, enableHighAccuracy: true, maximumAge: 30000, timeout: 3000000,});

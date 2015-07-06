@@ -142,7 +142,6 @@ POI.prototype.getInfoBox = function(){
   if(typeof this.oh != 'undefined' && this.element.tags.hasOwnProperty("opening_hours"))
     tabs+='<li><a href="#hours" data-toggle="tab">'+lang_opening_hours+'</a></li>';
 
-  tabs+='<li><a href="#comments" data-toggle="tab">'+lang_comments+'</a></li>';
   tabs+='<li><a href="#tags" data-toggle="tab">'+lang_advanced+'</a></li></ul>';
 
   var content = '<div class="tab-content">';
@@ -181,9 +180,6 @@ POI.prototype.getInfoBox = function(){
         content+='<a href="https://github.com/ypid/opening_hours.js/commits/master/demo.html">Author</a></div>';
       }
 
-      //comments
-      content+='<div class="tab-pane" id="comments"><div id="disqus_thread"></div></div>';
-
       //tags
       content+='<div class="tab-pane" id="tags"><table class="table table-condensed">';
       content+="<thead><tr><th><b>"+lang_key+"</b></th><th><b>"+lang_value+"</b></th></tr></thead>";
@@ -202,9 +198,8 @@ POI.prototype.getInfoBox = function(){
 
       content+='</div>';
       //link
-      var link = '<iframe scrolling="no" style="border: 0; width: 234px; height: 60px;" src="//coinurl.com/get.php?id=27504&SSL=1"></iframe>';
       var container = $('<div />');
-      container.html('<div class="tabbable tabs-below">'+content+tabs+'</div>'+link);
+      container.html('<div class="tabbable tabs-below">'+content+tabs+'</div>');
       return [container[0], 'http://osm24.eu/index.php?id='+this.element.id+'#!18/'+this.element.lat+'/'+this.element.lon+'/' ];
 };
 

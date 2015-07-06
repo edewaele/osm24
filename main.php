@@ -52,7 +52,6 @@ include("language.php");
         echo "<script type=\"text/javascript\">var get_locate=1;</script>";
       }
     ?>
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="js/easyoverpass.js"></script>
     <script src="js/opening_hours.js"></script>  
     <link href="css/style.css" rel="stylesheet">

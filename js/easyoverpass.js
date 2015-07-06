@@ -112,7 +112,7 @@ EasyOverpass.prototype.onMoveEnd = function(){
     return;
   }
 
-  if(this.options.query != ""){
+  if(this.options.query){
     var query_a = this.options.query+out;
     console.log("Query: "+query_a);
     query_a = query_a.replace(/(BBOX)/g, this.options.map.getBounds().toOverpassBBoxString());
