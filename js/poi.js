@@ -160,7 +160,11 @@ POI.prototype.getInfoBox = function(){
   content+='<div>';
   content += this.__genItems({tag:['contact:email','email'],icon:'glyphicon glyphicon-envelope',href:'mailto:'});
   content += this.__genItems({tag:['contact:phone','phone'],icon:'glyphicon glyphicon-phone-alt',href:'tel:'});
-  content += this.__genItems({tag:['contact:website','website'],icon:'glyphicon glyphicon-globe',href:''});
+  content += this.__genItems({tag:['contact:website','website'],icon:'glyphicon glyphicon-globe',href:'',
+  hrefFunc:function(nn){
+	// some website values have no protocol indication, resulting in a misintrepretation of the URL (eg. http://osm24.eu/www.jeudepaume.org)
+	return (nn.indexOf('http://') == -1 && nn.indexOf('https://') == -1)?'http://'+nn:nn;
+  }});
 
   content += this.__genItems({tag:['contact:facebook'],icon:'glyphicon glyphicon-globe',name:"Facebook",href:'',hrefFunc: 
     function(nn){return ((nn.indexOf('/') === -1)?"http://facebook.com/":"")+nn;}});
