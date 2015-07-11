@@ -349,6 +349,7 @@ define('JS_STATUS','Statut');
 define('JS_LOADING','Chargement...');
 define('JS_PLEASE_ZOOM_IN','Zoomez pour voir les points d\'intérêt');
 define('JS_OPEN','Ouvert');
+define('JS_OPEN_OSM','Ouvrir dans OpenStreetMap');
 define('JS_LAST_HOUR','Moins d\'une heure');
 define('JS_CLOSE','Fermé');
 define('JS_NO_DATA','Inconnu');

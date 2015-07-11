@@ -351,6 +351,7 @@ define('JS_STATUS','Статус');
 define('JS_LOADING','Идет загрузка...');
 define('JS_PLEASE_ZOOM_IN','Приблизьте карту, чтобы увидеть объекты');
 define('JS_OPEN','Открыто');
+define('JS_OPEN_OSM','Open in OSM');
 define('JS_LAST_HOUR','Последний час');
 define('JS_CLOSE','Закрыто');
 define('JS_NO_DATA','Нет данных');

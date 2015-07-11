@@ -351,6 +351,7 @@ define ('JS_STATUS', 'Статус');
 define ('JS_LOADING', 'Йде завантаження…');
 define ('JS_PLEASE_ZOOM_IN', 'Наблизьте мапу, щоб побачити об’єкти');
 define ('JS_OPEN', 'Відкрито');
+define('JS_OPEN_OSM','Open in OSM');
 define ('JS_LAST_HOUR', 'Остання година');
 define ('JS_CLOSE', 'Зачинено');
 define ('JS_NO_DATA', 'Дані');

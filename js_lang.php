@@ -20,6 +20,7 @@ var lang_not_found='<?php echo addslashes(JS_NOT_FOUND);?>';
 var lang_loading='<?php echo addslashes(JS_LOADING);?>';
 var lang_please_zoom_in='<?php echo addslashes(JS_PLEASE_ZOOM_IN);?>';
 var lang_open='<?php echo addslashes(JS_OPEN);?>';
+var lang_open_osm='<?php echo addslashes(JS_OPEN_OSM);?>';
 var lang_last_hour='<?php echo addslashes(JS_LAST_HOUR);?>';
 var lang_close='<?php echo addslashes(JS_CLOSE);?>';
 var lang_nodata='<?php echo addslashes(JS_NO_DATA);?>';

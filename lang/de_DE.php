@@ -348,6 +348,7 @@ define('JS_STATUS','Status');
 define('JS_LOADING','Lade...');
 define('JS_PLEASE_ZOOM_IN','Bitte hineinzoomen');
 define('JS_OPEN','Offen');
+define('JS_OPEN_OSM','Open in OSM');
 define('JS_LAST_HOUR','Letzte Stunde');
 define('JS_CLOSE','Geschlossen');
 define('JS_NO_DATA','Keine Daten');

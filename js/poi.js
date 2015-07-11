@@ -197,9 +197,9 @@ POI.prototype.getInfoBox = function(){
 
       content+='</tbody></table>';
       if(this.element.id[0]!='w')
-        content+="<a href='http://www.openstreetmap.org/node/"+this.element.id+"' target='_blank'>Open OSM</a>";
+        content+="<a href='http://www.openstreetmap.org/node/"+this.element.id+"' target='_blank'>"+lang_open_osm+"</a>";
       else
-        content+="<a href='http://www.openstreetmap.org/way/"+this.element.id.substr(1)+"' target='_blank'>Open OSM</a>";
+        content+="<a href='http://www.openstreetmap.org/way/"+this.element.id.substr(1)+"' target='_blank'>"+lang_open_osm+"</a>";
 
       content+='</div>';
 
