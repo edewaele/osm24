@@ -313,6 +313,7 @@ include("language.php");
                 <li><a id="office_association" data-tag-pair="[office=association]" data-tag-type="main"><?php echo PANEL_OFFICE_ASSOCIATION;?></a></li>
                 <li><a id="office_lawyer" data-tag-pair="[office=lawyer]" data-tag-type="main"><?php echo PANEL_OFFICE_LAWYER;?></a></li>
                 <li><a id="office_notary" data-tag-pair="[office=notary]" data-tag-type="main"><?php echo PANEL_OFFICE_NOTARY;?></a></li>
+				<li><a id="office_post_office" data-tag-pair="[amenity=post_office]" data-tag-type="main"><?php echo PANEL_OFFICE_POST_OFFICE;?></a></li>
               </ul>
             </li>
 

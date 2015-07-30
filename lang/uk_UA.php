@@ -143,6 +143,7 @@ define ('PANEL_OFFICE_ARCHITECT', 'Архітектор');
 define ('PANEL_OFFICE_ASSOCIATION', 'Товариство');
 define ('PANEL_OFFICE_LAWYER', 'Юрист');
 define ('PANEL_OFFICE_NOTARY', 'Нотаріус');
+define('PANEL_OFFICE_POST_OFFICE','Post office');
 
 define ('PANEL_CRAFT_LIST', 'Професія');
 define ('PANEL_CRAFT_ALL', 'Усе');

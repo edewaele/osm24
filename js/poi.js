@@ -10,7 +10,7 @@ var shop_icons=["alcohol",'antiques',"art",
 var leisure_icons=['pitch','swimming_pool','stadium','track','sports_centre'];
 var amenity_icons=['atm','bar','bank','biergarten','cafe','cinema','clinic','college','dentist','doctors','drinking_water',
 'fast_food','fuel','hospital','ice_cream','kindergarten','library','nightclub',
-'pub','pharmacy','restaurant','school','shelter','social_facility','stripclub','theatre','toilets','university','veterinary'];
+'pub','pharmacy','restaurant','school','shelter','social_facility','stripclub','theatre','toilets','university','veterinary','post_office'];
 var office_icons=[];
 var craft_icons=['key_cutter','clockmaker','glaziery','photographer','shoemaker','tailor'];
 var emergency_icons=['ambulance_station','defibrillator'];

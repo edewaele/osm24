@@ -142,6 +142,7 @@ define('PANEL_OFFICE_ARCHITECT','Architecte');
 define('PANEL_OFFICE_ASSOCIATION','Association');
 define('PANEL_OFFICE_LAWYER','Avocat');
 define('PANEL_OFFICE_NOTARY','Notaire');
+define('PANEL_OFFICE_POST_OFFICE','Bureau de poste');
 
 define('PANEL_CRAFT_LIST','Type');
 define('PANEL_CRAFT_ALL','Tous');
