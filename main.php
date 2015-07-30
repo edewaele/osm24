@@ -95,7 +95,7 @@ include("language.php");
             <li class="dropdown  btn-group btn-group-own ">
               <a class="dropdown-toggle btn-select" id="type" data-toggle="dropdown"><?php echo PANEL_EAT;?><span class="caret"></span></a>
               <ul class="dropdown-menu select-one-change sort">
-                <li><a id="all"  data-tag-pair="['amenity'='restaurant']@['amenity'='fast_food']@['amenity'='cafe']@['amenity'='ice_cream']@[shop]@[office]@[craft]@[sport]@[amenity=toilets]@[amenity=drinking_water]@['amenity'='pub']@['amenity'='bar']@['amenity'='nightclub']@['amenity'='biergarten']@['amenity'='stripclub']@[amenity='pharmacy']@[amenity='fuel']@['amenity'='bank']@['amenity'='atm']@['amenity'='cinema']@['amenity'='theatre']@['amenity'='college']@['amenity'='library']@['amenity'='university']@['amenity'='kindergarten']@[tourism]@['amenity'='clinic']@['amenity'='hospital']@['amenity'='dentist']@['amenity'='doctors']@['amenity'='veterinary']@['amenity'='social_facility']@['emergency'='ambulance_station']@['emergency'='defibrillator']" data-tag-type="main"><?php echo PANEL_ALL;?></a></li>
+                <li><a id="all"  data-tag-pair="['amenity'='restaurant']@['amenity'='fast_food']@['amenity'='cafe']@['amenity'='ice_cream']@[shop]@[office]@[craft]@[sport]@[amenity=toilets]@[amenity=drinking_water]@['amenity'='pub']@['amenity'='bar']@['amenity'='nightclub']@['amenity'='biergarten']@['amenity'='stripclub']@[amenity='pharmacy']@[amenity='fuel']@['amenity'='bank']@['amenity'='atm']@['amenity'='cinema']@['amenity'='theatre']@['amenity'='college']@['amenity'='library']@['amenity'='university']@['amenity'='kindergarten']@[tourism]@['amenity'='clinic']@['amenity'='hospital']@['amenity'='dentist']@['amenity'='doctors']@['amenity'='veterinary']@['amenity'='social_facility']@['emergency'='ambulance_station']@['emergency'='defibrillator']@[amenity=post_office]" data-tag-type="main"><?php echo PANEL_ALL;?></a></li>
                 <li class="divider"></li>                
                 <li><a id="craft"><?php echo PANEL_CRAFT;?></a></li>
                 <li><a id="health"><?php echo PANEL_HEALTH;?></a></li>
@@ -305,7 +305,7 @@ include("language.php");
             <li style="display:none;" class="dropdown  btn-group btn-group-own  visible-office">
               <a class="dropdown-toggle btn-select tag-default" id="office" data-toggle="dropdown" data-default-id="office_all" data-arrow><?php echo PANEL_OFFICE_LIST;?><span class="caret"></span></a>
               <ul class="dropdown-menu select-one dropdown-menu-long tag-parent">
-                <li><a id="office_all" data-tag-pair="[office]" data-tag-type="main"><?php echo PANEL_OFFICE_ALL;?></a></li>
+                <li><a id="office_all" data-tag-pair="[office]@[amenity=post_office]" data-tag-type="main"><?php echo PANEL_OFFICE_ALL;?></a></li>
                 <li class="divider"></li>
                 <li><a id="office_accountant" data-tag-pair="[office=accountant]" data-tag-type="main"><?php echo PANEL_OFFICE_ACCOUNTANT;?></a></li>
                 <li><a id="office_administrative" data-tag-pair="[office=administrative]" data-tag-type="main"><?php echo PANEL_OFFICE_ADMINISTRATIVE;?></a></li>
